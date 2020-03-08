@@ -93,6 +93,8 @@
             font-weight: bold;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -103,8 +105,9 @@
     <div>
         <canvas class="canvas" width="1820" height="905"></canvas>
     </div>
-    <!-- <iframe style="display: none" src="https://www.nhaccuatui.com/mh/auto/phH8fV1qb0" width="620" height="382"
-        frameborder="0" allowfullscreen allow="autoplay"></iframe> -->
+    <iframe style="display: none" src="https://www.nhaccuatui.com/mh/auto/phH8fV1qb0" width="620" height="382"
+        frameborder="0" allowfullscreen allow="autoplay"></iframe>
+    <a style="display: none" id="letter" href="https://minhtrih.github.io/LetterForYou/">LetterForYou</a>
     <p class="text" style="color: #ed3073;">
         We fell in love
         <br />
@@ -136,7 +139,7 @@
             init: function () {
                 S.Drawing.init('.canvas');
                 document.body.classList.add('body--ready');
-                S.UI.simulate("Nhân|Ngày|8-3|Anh|Có|Món Quà|Tặng Em|Nèèèè|#countdown 3|#letter|#time");
+                S.UI.simulate("Nhân Ngày|8-3|Anh|Có|Món Quà|Tặng Em|Nèèèè|#countdown 3|#letter|#time");
                 S.Drawing.loop(function () {
                     S.Shape.render();
                 });
@@ -279,11 +282,8 @@
                             break;
 
                         case 'letter':
-                            console.log('abc');
-                            var windowObjectReference;
-                            var strWindowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
-                            // window.open("http://localhost:3000/", "CNN_WindowName", strWindowFeatures);
-                            setTimeout(() => window.open("https://minhtrih.github.io/LetterForYou/", "Letter For You", strWindowFeatures), 3000);
+                            var button = document.getElementById('letter')
+                            setTimeout(() => button.click(), 10000);
                             break;
 
                         case 'time':
